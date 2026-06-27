@@ -9,9 +9,35 @@ format:
     css: styles/tables.css
     embed-resources: true
     self-contained-math: true
+bibliography: references.bib
 ---
 
+# Increased Prevalence of High-Risk HPV+ DNA of Rectal cells in IBD Patients
 
-# Increased Prevalence of High-Risk HPV+ DNA of Rectal cells in IBD Patients 
+Prior studies have established an increased rate of anal cancer in patients with IBD. *Albuquerque et al.* noted that an incidence of anal cancer of 2 per 100k person-years in the general population. They then noted a 7.7 per 100k in Crohn's, and 10.2 per 100k in Ulcerative Colitis. In Crohn's patients with prior perianal disease, the incidence was even higher - 19.6 per 100k person-years, or *10 times* the incidence. [@albuquerque2023]
 
+When looking at IBD patients in general within the Epic Cosmos dataset, we also found there is a nearly 10x rate of anal cancer (Figure 1). When separating by Crohn's vs Ulcerative Colitis, there is an increased prevalence amongst Ulcerative Colitis, noting
 
+![Figure 1. Anal cancer defined by ICD code: HGSIL of anus (R85.613), anal intraepithelial\
+neoplasia III (D01.3), Dysplasia of Anus (K62.82)](figures/ibd-10x-anal-cancer.png){fig-align="left" width="572"}
+
+## A Doubling and Tripling of High-Risk HPV+ DNA in Anal cells in IBD
+
+![Figure 3. High-Risk HPV+ DNA from anal cells occur at 2x in Crohn's, and 3x in UC\
+compared to the general population](figures/anal-HR-HPV+-DNA-by-IBD.png){fig-align="left" width="572"}
+
+## Perianal Disease in Crohn's
+
+In a previous surgical study of a group of 33 IBD patients by *Slessler et al.*, 85% of Crohn's patients had perianal disease.
+
+Of note, It is unclear what role surveillance of the IBD population may have affected discovery. For example, patients with perianal disease may be more likely to be evaluated. However, if there is a high ratio of perianal disease patients that develop anal cancer, surveillance alone may not explain the higher rates.
+
+## Anal Sparing in Ulcerative Colitis
+
+While rectal involvement is Ulcerative Colitis is nearly universal, the anal canal is generally spared. This would seem to contradict the data that shows a higher rate of anal cancer in UC patients. High-Risk HPV rates are also increased at this location, which may factor into the higher rates of anal cancer.
+
+## Future Proposals
+
+With the higher rates of High-Risk HPV positive DNA in IBD patients, regular screening for these patients may have an outsized effect on rates of anal cancer.
+
+A large-volume study of screenings, especially tied to rates of Azathioprine use, history of Perianal involvement, and

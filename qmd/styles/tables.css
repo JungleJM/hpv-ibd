@@ -1,0 +1,24 @@
+body {
+  font-size: 16px;
+}
+
+figcaption,
+.figure-caption {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.35;
+}
+
+small {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.35;
+}
+
+table {
+  font-size: 0.95rem;
+}
+
+.cell-output-display {
+  margin-block: 1rem;
+}
