@@ -1,0 +1,17 @@
+---
+title: "High-Risk HPV and Anal Cancer amongst IBD Patients"
+format:
+  html:
+    toc: false
+    toc-depth: 3
+    toc-location: right
+    echo: false
+    css: styles/tables.css
+    embed-resources: true
+    self-contained-math: true
+---
+
+
+# Increased Prevalence of High-Risk HPV+ DNA of Rectal cells in IBD Patients 
+
+

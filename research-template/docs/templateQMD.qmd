@@ -1,0 +1,12 @@
+---
+title: "templateQMD"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    echo: false
+    css: styles/tables.css
+    embed-resources: true
+    self-contained-math: true
+---
