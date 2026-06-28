@@ -36,11 +36,53 @@ Of note, It is unclear what role surveillance of the IBD population may have aff
 
 While rectal involvement is Ulcerative Colitis is nearly universal, the anal canal is generally spared. This would seem to contradict the data that shows a higher rate of anal cancer in UC patients. High-Risk HPV rates are also increased at this location, which may factor into the higher rates of anal cancer.
 
+## Azathioprine Use Does Not Seem to Correlate
+
+Does not seem to be correlate. There was a higher use rate of Azathioprine for patients who had Crohn's (7.48%) than Ulcerative Colitis (5.21%). However, when looking at patients with both IBD and anal HRHPV+ DHA, less than 10% of Anal HRHPV+ Crohn's patients were on Azathioprine, and less than 5% of Anal HRHPV+ UC patients were on Azathioprine. d
+
+![](figures/AZT-not-correlated-HRHPV.png)
+
+## Perianal Disease and Anal Cancer
+
+About 22% of Crohn's patients with Anal Cancer had Perianal disease in the 5 years prior to diagnosis (559/2535). For UC, that about 15% had prior perianal disease (474/3227). Chi-Square of 52.3, p<0.001. 
+
+![](figures/Anal-cancer-prior-perianal-dx.png){width="479"}
+
+```{r}
+#| label: perianal-disease-anal-cancer-chi-square
+#| echo: true
+perianal_anal_cancer_counts <- matrix(
+  c(
+    559, 2535 - 559,
+    474, 3227 - 474
+  ),
+  nrow = 2,
+  byrow = TRUE
+)
+
+rownames(perianal_anal_cancer_counts) <- c(
+  "Crohn disease",
+  "Ulcerative colitis"
+)
+
+colnames(perianal_anal_cancer_counts) <- c(
+  "Prior perianal disease",
+  "No prior perianal disease"
+)
+
+perianal_anal_cancer_chi_square <- chisq.test(
+  perianal_anal_cancer_counts,
+  correct = FALSE
+)
+
+perianal_anal_cancer_counts
+perianal_anal_cancer_chi_square
+```
+
+Pearson chi-square testing showed that prior perianal disease was significantly more common among Crohn's patients with anal cancer than UC patients with anal cancer, X^2^(1) = 52.3, p < 0.001.
+
 ## Future Proposals
 
 With the higher rates of High-Risk HPV positive DNA in IBD patients, regular screening for these patients may have an outsized effect on rates of anal cancer.
 
 A large-volume study of screenings, especially tied to rates of Azathioprine use, history of Perianal involvement, and
-
-
-
