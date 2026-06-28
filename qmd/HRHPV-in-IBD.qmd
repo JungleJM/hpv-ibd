@@ -86,3 +86,14 @@ Pearson chi-square testing showed that prior perianal disease was significantly 
 With the higher rates of High-Risk HPV positive DNA in IBD patients, regular screening for these patients may have an outsized effect on rates of anal cancer.
 
 A large-volume study of screenings, especially tied to rates of Azathioprine use, history of Perianal involvement, and
+
+
+Further study that may be of benefit, to stratify the population:
+
+Progression to Anal Cancer
+
+History of perianal disease - a prior small cohort analysis of 33 IBD patient with anal cancer noted an 85% prevalence of perianal disease for Crohn's patients with anal cancer [@slesser2013]. Perianal disease may point
+
+Immunosuppressive medication use - analysis of patients' history of Azathioprine, which is known to have a connection to cervical cancer
+
+Rates of Anal HPV or Anal cancer in CVID patients

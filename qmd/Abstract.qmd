@@ -1,7 +1,7 @@
 ---
-title: "Elevated Rates of High-Risk HPV+ DNA in IBD Patients"
+title: ""
 format:
-  html:
+  pdf:
     toc: false
     toc-depth: 3
     toc-location: right
@@ -14,34 +14,24 @@ bibliography: references.bib
 
 # Elevated Rates of High-Risk HPV+ DNA in IBD Patients
 
-## *Introduction:* 
+*Introduction:* IBD patients, especially Ulcerative Colitis patients, have significantly increased rates of anal cancer. However, no large-scale study has analyzed HPV rates of IBD patients, nor diagnosis rates of anal High-Risk HPV in relation to anal cancer. We did a retrospective analysis of the total IBD patient population in Epic Cosmos, an international dataset with roughly 2.4 million IBD patients (1.2 million Crohn's and UC patients each). We hypothesized that high risk HPV+ DNA on anal sampling or a history of perianal disease are risk factors that contribute to higher rates of anal cancer within IBD Populations.
 
-IBD patients, especially Ulcerative Colitis patients, have significantly increased rates of anal cancer. ( In Crohn's patients with prior perianal disease, the incidence was even higher - 19.6 per 100k person-years, or 10 times the incidence. ) However, no large-scale study has analyzed HPV rates of IBD patients, nor diagnosis rates of High-Risk HPV+ in anal tissue. We did a retrospective analysis of the total IBD patient population in Epic Cosmos, an international dataset with roughly 3 million IBD patients. We found a 2-fold (Crohn's) and 3-fold (UC) increase in risk of anal High-Risk HPV+ DNA, compared to the general population.
+*Methods:* We compared Crohn's and UC patients with an active diagnosis between 6/1990 to 6/2026. We looked at patients in those groups who had an ICD-10 diagnosis of High-Risk HPV+ DNA in anal tissue ("HR-HPV+ DNA") and patients with a diagnosis of Anal Cancer. We then analyzed for anal cancer patients stratified by theorized causes - history of perianal disease within the prior 5 years, history of azathioprine use after IBD diagnosis, and history of HR-HPV+ DNA within the prior 5 years. We performed chi-square analyses to look for dependence, and assumed a 95% Confidence interval when analysing for significance.
 
-## *Methods:* 
+*Results:* Results are presented in the table below.
 
-We stratified the 300-million-patient database into Crohn's, UC (roughly 1.2 million each) and non-IBD, with an active diagnosis between 6/1990 to 6/2026. We looked at patients in those groups who had an ICD-10 diagnosis of High-Risk HPV+ DNA in anal tissue ("HR-HPV+ DNA"), as well as patients with a diagnosis of Anal Cancer. We then analyzed for patients who hadstratified by theorized causes - history of perianal disease within the prior 5 years, history of azathioprine use after IBD diagnosis, and diagnosis of Anal Cancer within 5 years of 
+| IBD Type | \% with Anal HR-HPV+ DNA | \% with Anal Cancer | \% with Anal HR-HPV+ DNA, then Anal cancer within 5 years | \% with Perianal Disease, then anal cancer within 5 years |
+|---------------|---------------|---------------|---------------|---------------|
+| Non-IBD | 0.0075% | 0.04% | 0.003% | 0.003% |
+| Crohn's | 0.016% | 0.21% | 0.008% | 0.046% |
+| Ulcerative Colitis | 0.027% | 0.27% | 0.013% | 0.04% |
 
-## *Results:* 
+Compared with the general population, patients with IBD had a roughly 5-fold higher prevalence of anal cancer in Crohn’s disease and 7-fold higher prevalence in ulcerative colitis.
 
-A total of 516 IBD patients were found with anal HR-HPV+ DNA, of the roughly 2.4 million IBD patients. While 0.0075% of non-IBD patients were found with anal HR-HPV+ DNA, 0.016% of Crohn's patients, and 0.027% of Ulcerative Colitis patients were found to have it. This represents a roughly 2-fold (Crohn's) and 3-fold (UC) increase in risk compared to the general population. Given the rarity of the diagnosis, the odds ratio is essentially the same. Chi Square analysis shows a P significantly below 0.05, and independence of UC and Crohn's from non-IBD, as well as from each other.
+Of the roughly 2.4 million IBD patients, 516 were found to have anal HR-HPV+ DNA. Compared with the general population, anal HR-HPV+ DNA prevalence was approximately 2.1-fold higher in Crohn’s disease and 3.6-fold higher in ulcerative colitis. Chi Square analysis rejected independence with a p-value significantly below 0.05, supporting a significant association between group status and outcome frequency.
 
-On 
+Among patients with anal HR-HPV+ DNA, anal cancer diagnosis within 5 years was also more frequent in IBD groups: approximately 2.7-fold higher in Crohn’s disease and 4.3-fold higher in ulcerative colitis compared with the general population. Similarly, among patients with perianal disease, anal cancer diagnosis within 5 years was approximately 15-fold higher in Crohn’s disease and 13-fold higher in ulcerative colitis.
 
-## *Discussion*
+Overall, ulcerative colitis showed the highest prevalence of anal cancer and anal HR-HPV+ DNA, while perianal disease was more strongly associated in Crohn’s disease. Among the studied risk factors, perianal disease showed the largest relative increase in subsequent anal cancer diagnosis.
 
-It is curious that Ulcerative Colitis shows a higher rate of Anal HR-HPV presence. While there is almost always rectal involvement, anal tissue is usually spared. This could a multifactorial phenomenon, influenced by perianal inflammatory processes, or immunosuppresive medication allowing for more accelerated HPV progression.
-
-Given this higher ratio of HR-HPV, Patients with IBD could significantly benefit from more aggressive HPV immunization, as well as regular screenings.
-
-Further study that may be of benefit, to stratify the population:
-
-- Progression to Anal Cancer
-
-- History of perianal disease - a prior small cohort analysis of 33 IBD patient with anal cancer noted an 85% prevalence of perianal disease for Crohn's patients with anal cancer [@slesser2013]. Perianal disease may point
-
-- Immunosuppressive medication use - analysis of patients' history of Azathioprine, which is known to have a connection to cervical cancer
-
-- Rates of Anal HPV or Anal cancer in CVID patients
-
-*Conclusion:* There is a 2-3-fold increased risk for anal High-Risk HPV in IBD patients. This population may benefit from regular vaccination and screenings.
+*Conclusion:* Compared with the general population, patients with IBD had significantly higher observed prevalence of anal cancer and anal HR-HPV+ DNA. Prior perianal disease was associated with an approximately 13- to 15-fold higher frequency of anal cancer diagnosis within 5 years. These findings may support further study of targeted HPV vaccination and screening strategies in IBD patients, particularly those with a history of perianal disease.
