@@ -1,0 +1,362 @@
+---
+title: "High-Risk HPV and Anal Cancer amongst IBD Patients"
+format:
+  html:
+    toc: false
+    toc-depth: 3
+    toc-location: right
+    echo: false
+    css: styles/tables.css
+    embed-resources: true
+    self-contained-math: true
+bibliography: references.bib
+---
+
+# Results Data
+
+## HPV risk and odds math for IBD groups
+
+This document lays out the proportion, risk ratio, odds, odds ratio, and confidence-interval math in Quarto-friendly Markdown. The outcome is a specific HPV diagnosis, and the exposure groups are non-IBD, Crohn's disease, and ulcerative colitis.[1][2]
+
+
+## Raw counts
+
+- Crohn's: 197 / 1,206,873
+- UC: 319 / 1,191,972
+- Non-IBD: 22,867 / 305,065,760
+
+
+Crohn's
+197/1,206,873  (0.016%)
+(95% CI: +/- 0.002%, Z-Score: 1.96 Standard Error: 0.001)
+
+UC
+319/1,191,972 (0.027%)
+95% Confidence Interval: +/- 0.003%
+Z-Score: 1.96 Standard Error: 0.001
+
+Non-IBD
+22,867/305,065,760 (0.0075%)
+95% Confidence Interval: +/- 0%
+Z-Score: 1.96 Standard Error: 0
+
+## Proportions
+
+The sample proportion is:
+
+$$
+\hat{p} = \frac{x}{n}
+$$
+
+### Crohn's
+
+$$
+\hat{p}_{\text{Crohn}} = \frac{197}{1{,}206{,}873} \approx 0.0001633
+$$
+
+As a percent:
+
+$$
+0.0001633 \times 100 = 0.01633\%
+$$
+
+### UC
+
+$$
+\hat{p}_{\text{UC}} = \frac{319}{1{,}191{,}972} \approx 0.0002677
+$$
+
+As a percent:
+
+$$
+0.0002677 \times 100 = 0.02677\%
+$$
+
+### Non-IBD
+
+$$
+\hat{p}_{\text{non-IBD}} = \frac{22{,}867}{305{,}065{,}760} \approx 0.0000750
+$$
+
+As a percent:
+
+$$
+0.0000750 \times 100 = 0.00750\%
+$$
+
+Rounded to four decimal places in proportion form:
+
+- Crohn's: 0.0002
+- UC: 0.0003
+- Non-IBD: 0.0001
+
+These are all very small probabilities, so the rare disease assumption applies and the odds ratio closely approximates the risk ratio.[2][3]
+
+## Risk ratios
+
+Using non-IBD as the reference:
+
+$$
+RR_{\text{Crohn vs non-IBD}} = \frac{0.0001633}{0.0000750} \approx 2.1773
+$$
+
+$$
+RR_{\text{UC vs non-IBD}} = \frac{0.0002677}{0.0000750} \approx 3.5693
+$$
+
+Interpretation:
+
+- Crohn's has about 2.18 times the risk of HPV diagnosis compared with non-IBD.
+- UC has about 3.57 times the risk of HPV diagnosis compared with non-IBD.
+
+## Odds
+
+Odds are defined as:
+
+$$
+\text{odds} = \frac{p}{1-p}
+$$
+
+### Non-IBD odds
+
+$$
+\text{odds}_{\text{non-IBD}} = \frac{0.0000750}{1 - 0.0000750} = \frac{0.0000750}{0.9999250} \approx 0.0000751
+$$
+
+### Crohn's odds
+
+$$
+\text{odds}_{\text{Crohn}} = \frac{0.0001633}{1 - 0.0001633} = \frac{0.0001633}{0.9998367} \approx 0.0001633
+$$
+
+### UC odds
+
+$$
+\text{odds}_{\text{UC}} = \frac{0.0002677}{1 - 0.0002677} = \frac{0.0002677}{0.9997323} \approx 0.0002678
+$$
+
+Because the probabilities are so small, each odds value is nearly identical to its corresponding risk.[1][2]
+
+## Odds ratios
+
+Using non-IBD as the reference:
+
+$$
+OR_{\text{Crohn vs non-IBD}} = \frac{0.0001633 / (1-0.0001633)}{0.0000750 / (1-0.0000750)} \approx \frac{0.0001633}{0.0000751} \approx 2.1770
+$$
+
+$$
+OR_{\text{UC vs non-IBD}} = \frac{0.0002677 / (1-0.0002677)}{0.0000750 / (1-0.0000750)} \approx \frac{0.0002678}{0.0000751} \approx 3.5667
+$$
+
+Interpretation:
+
+- Crohn's has about 2.18 times the odds of HPV diagnosis compared with non-IBD.
+- UC has about 3.57 times the odds of HPV diagnosis compared with non-IBD.
+
+Given how rare the outcome is, these ORs are essentially the same as the RRs in practical interpretation.[1][2][3]
+
+## Standard error and 95% CI for a proportion
+
+For a sample proportion, the standard error is:
+
+$$
+SE_{\hat{p}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+$$
+
+The Wald 95% confidence interval is:
+
+$$
+\hat{p} \pm 1.96 \times SE_{\hat{p}}
+$$
+
+This is the usual large-sample proportion CI formula.[4][5][6]
+
+### Crohn's example
+
+$$
+SE_{\hat{p},\text{Crohn}} = \sqrt{\frac{0.0001633(1-0.0001633)}{1{,}206{,}873}} \approx 0.0000116
+$$
+
+$$
+95\%\ CI = 0.0001633 \pm 1.96 \times 0.0000116
+$$
+
+$$
+95\%\ CI \approx 0.0001633 \pm 0.0000227
+$$
+
+$$
+95\%\ CI \approx (0.0001406,\ 0.0001860)
+$$
+
+As percentages:
+
+$$
+(0.01406\%,\ 0.01860\%)
+$$
+
+### UC example
+
+$$
+SE_{\hat{p},\text{UC}} = \sqrt{\frac{0.0002677(1-0.0002677)}{1{,}191{,}972}} \approx 0.0000150
+$$
+
+$$
+95\%\ CI = 0.0002677 \pm 1.96 \times 0.0000150
+$$
+
+$$
+95\%\ CI \approx 0.0002677 \pm 0.0000294
+$$
+
+$$
+95\%\ CI \approx (0.0002383,\ 0.0002971)
+$$
+
+As percentages:
+
+$$
+(0.02383\%,\ 0.02971\%)
+$$
+
+### Non-IBD example
+
+$$
+SE_{\hat{p},\text{non-IBD}} = \sqrt{\frac{0.0000750(1-0.0000750)}{305{,}065{,}760}} \approx 0.0000005
+$$
+
+$$
+95\%\ CI = 0.0000750 \pm 1.96 \times 0.0000005
+$$
+
+$$
+95\%\ CI \approx 0.0000750 \pm 0.0000010
+$$
+
+$$
+95\%\ CI \approx (0.0000741,\ 0.0000760)
+$$
+
+As percentages:
+
+$$
+(0.00741\%,\ 0.00760\%)
+$$
+
+## Manuscript-style wording
+
+Possible wording:
+
+> The incidence of HPV diagnosis was 0.00750% in the non-IBD group, 0.01633% in Crohn's disease, and 0.02677% in ulcerative colitis. Relative to non-IBD, this corresponds to an approximately 2.18-fold higher risk in Crohn's disease and a 3.57-fold higher risk in ulcerative colitis. Because the outcome was extremely rare, the corresponding odds ratios were numerically almost identical to the risk ratios.[1][2][3]
+
+For logistic regression wording:
+
+> Using non-IBD as the reference category, Crohn's disease and ulcerative colitis were associated with approximately 2.18-fold and 3.57-fold higher odds of HPV diagnosis, respectively. Given the very low absolute event rate, these odds ratios can be interpreted as closely approximating the corresponding relative risks.[1][2][3]
+
+## Chi-square analysis
+
+The chi-square analysis should use the raw counts, not the confidence intervals, Z scores, or standard errors. The confidence intervals describe uncertainty around each group's observed proportion. The chi-square test asks a different question: whether the distribution of HR-HPV positive vs HR-HPV negative patients differs by group.
+
+### Step 1: load the reusable functions
+
+The functions live in `scripts/csv-analysis.r`. When this Quarto file is rendered from the `qmd/` folder, the script is one directory up.
+
+```{r}
+#| label: chi-square-load-functions
+#| echo: true
+source("../scripts/csv-analysis.r")
+```
+
+### Step 2: read the CSV
+
+This reads `data/hrhpv_group_counts.csv` and checks that the columns needed for the analysis are present.
+
+```{r}
+#| label: chi-square-read-counts
+#| echo: true
+counts <- read_hrhpv_counts()
+
+counts |>
+  dplyr::select(
+    group,
+    outcome_positive,
+    outcome_negative,
+    total,
+    percent
+  )
+```
+
+### Step 3: make the 3 by 2 contingency table
+
+This is the raw table used by the overall Pearson chi-square test.
+
+```{r}
+#| label: chi-square-contingency-table
+#| echo: true
+contingency_table <- make_hrhpv_contingency_table(counts)
+
+contingency_table
+```
+
+The rows are the three exposure groups. The columns are the two outcome states: HR-HPV positive and HR-HPV negative.
+
+### Step 4: run the overall Pearson chi-square test
+
+This test asks whether HR-HPV positivity is independent of group membership across all three groups.
+
+```{r}
+#| label: chi-square-overall-test
+#| echo: true
+overall_chi_square <- run_hrhpv_chi_square(
+  counts = counts,
+  correct = FALSE
+)
+
+overall_chi_square$summary_table
+```
+
+The `continuity_correction = FALSE` column means that Yates' continuity correction was not applied. That correction is mainly used for small 2 by 2 tables. Here, the counts are very large, so the standard Pearson chi-square test is appropriate.
+
+The p value is extremely small. This is evidence against independence, not evidence for independence. In plain language, HR-HPV positivity differs by group.
+
+Manuscript-style wording:
+
+> HR-HPV positivity differed significantly by group on Pearson chi-square testing, X^2^(2) = 701, p < 0.001.
+
+### Step 5: run the pairwise 2 by 2 chi-square tests
+
+The overall chi-square test tells us that at least one group differs from another. Pairwise tests show which group comparisons are driving that result.
+
+Here the three pairwise comparisons are:
+
+- Crohn's disease vs non-IBD
+- Ulcerative colitis vs non-IBD
+- Crohn's disease vs ulcerative colitis
+
+Because these are multiple follow-up tests, the p values should be adjusted. The code below uses Holm adjustment, which is a common conservative option.
+
+```{r}
+#| label: chi-square-pairwise-tests
+#| echo: true
+pairwise_chi_square <- run_hrhpv_pairwise_chi_square(
+  counts = counts,
+  comparisons = list(
+    c("Crohn disease", "Non-IBD"),
+    c("Ulcerative colitis", "Non-IBD"),
+    c("Crohn disease", "Ulcerative colitis")
+  ),
+  correct = FALSE,
+  p_adjust_method = "holm"
+)
+
+pairwise_chi_square
+```
+
+Interpretation:
+
+- Crohn's disease differs significantly from non-IBD.
+- Ulcerative colitis differs significantly from non-IBD.
+- Crohn's disease also differs significantly from ulcerative colitis.
+
+Because all adjusted p values are far below 0.05, the pairwise tests support the same overall conclusion: HR-HPV positivity is not independent of group status.
