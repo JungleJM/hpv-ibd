@@ -1,0 +1,20 @@
+---
+title: "Elevated Rates of High-Risk HPV+ DNA in IBD Patients"
+format:
+  html:
+    toc: false
+    toc-depth: 3
+    toc-location: right
+    echo: false
+    css: styles/tables.css
+    embed-resources: true
+    self-contained-math: true
+bibliography: references.bib
+---
+
+
+# Elevated Rates of High-Risk HPV+ DNA in IBD Patients
+
+*Introduction:* IBD patients, especially Ulcerative Colitis patients, have significantly increased rates of anal cancer. ( In Crohn's patients with prior perianal disease, the incidence was even higher - 19.6 per 100k person-years, or 10 times the incidence. ) However, no large-scale study has analyzed HPV rates of IBD patients, nor diagnosis rates of High-Risk HPV+ in anal tissue. We did a retrospective analysis of the total IBD patient population in Epic Cosmos, an international dataset with roughly 3 million IBD patients. 
+
+*Methods:*
