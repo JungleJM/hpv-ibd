@@ -1,0 +1,26 @@
+---
+title: "Data Tables"
+format:
+  html:
+    toc: false
+    echo: false
+    css: styles/tables.css
+    embed-resources: true
+---
+
+```{r}
+#| label: load-data-table
+source("../scripts/data-analysis.r")
+
+analysis <- run_data_analysis()
+```
+
+The p value shown in each cell is the row-level Pearson chi-square p value comparing non-IBD, Crohn's disease, and ulcerative colitis for that outcome.
+
+```{r}
+#| label: outcome-table
+knitr::kable(
+  analysis$display_table,
+  align = c("l", "c", "c", "c")
+)
+```
