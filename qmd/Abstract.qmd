@@ -28,7 +28,7 @@ bibliography: references.bib
 
 Compared with the general population, patients with IBD had a roughly 5-fold higher prevalence of anal cancer in Crohn’s disease and 7-fold higher prevalence in ulcerative colitis.
 
-Of the roughly 2.4 million IBD patients, 516 were found to have anal HR-HPV+ DNA. Compared with the general population, anal HR-HPV+ DNA prevalence was approximately 2.1-fold higher in Crohn’s disease and 3.6-fold higher in ulcerative colitis. Chi Square analysis rejected independence with a p-value significantly below 0.05, supporting a significant association between group status and outcome frequency.
+Of the roughly 2.4 million IBD patients, 516 were found to have anal HR-HPV+ DNA. Compared with the general population, anal HR-HPV+ DNA prevalence was approximately 2.1-fold higher in Crohn’s disease and 3.6-fold higher in ulcerative colitis. Chi Square analysis rejected independence with a p <0.001, supporting a significant association between group status and outcome frequency.
 
 Among patients with anal HR-HPV+ DNA, anal cancer diagnosis within 5 years was also more frequent in IBD groups: approximately 2.7-fold higher in Crohn’s disease and 4.3-fold higher in ulcerative colitis compared with the general population. Similarly, among patients with perianal disease, anal cancer diagnosis within 5 years was approximately 15-fold higher in Crohn’s disease and 13-fold higher in ulcerative colitis.
 
