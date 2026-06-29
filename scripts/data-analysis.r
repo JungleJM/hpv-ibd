@@ -60,6 +60,7 @@ calculate_proportion_stats <- function(data_collection = read_data_collection())
   z_score <- 1.96
 
   result <- data_collection |>
+    dplyr::group_by(.data$outcome_id) |>
     dplyr::mutate(
       negative = .data$denominator - .data$numerator,
       proportion = .data$numerator / .data$denominator,
@@ -81,7 +82,44 @@ calculate_proportion_stats <- function(data_collection = read_data_collection())
       ci_upper_proportion = .data$proportion +
         .data$ci_half_width_proportion,
       ci_lower_percent = 100 * .data$ci_lower_proportion,
-      ci_upper_percent = 100 * .data$ci_upper_proportion
+      ci_upper_percent = 100 * .data$ci_upper_proportion,
+      odds = .data$numerator / .data$negative,
+      reference_odds = .data$odds[.data$group == "Non-IBD"][[1]],
+      odds_ratio_vs_non_ibd = .data$odds / .data$reference_odds,
+      reference_numerator = .data$numerator[.data$group == "Non-IBD"][[1]],
+      reference_negative = .data$negative[.data$group == "Non-IBD"][[1]],
+      log_odds_ratio_se_vs_non_ibd = dplyr::if_else(
+        .data$group == "Non-IBD",
+        NA_real_,
+        sqrt(
+          1 / .data$numerator +
+            1 / .data$negative +
+            1 / .data$reference_numerator +
+            1 / .data$reference_negative
+        )
+      ),
+      odds_ratio_ci_lower_vs_non_ibd = dplyr::if_else(
+        .data$group == "Non-IBD",
+        NA_real_,
+        exp(
+          log(.data$odds_ratio_vs_non_ibd) -
+            .data$z_score * .data$log_odds_ratio_se_vs_non_ibd
+        )
+      ),
+      odds_ratio_ci_upper_vs_non_ibd = dplyr::if_else(
+        .data$group == "Non-IBD",
+        NA_real_,
+        exp(
+          log(.data$odds_ratio_vs_non_ibd) +
+            .data$z_score * .data$log_odds_ratio_se_vs_non_ibd
+        )
+      )
+    ) |>
+    dplyr::ungroup() |>
+    dplyr::select(
+      -"reference_odds",
+      -"reference_numerator",
+      -"reference_negative"
     )
 
   result
@@ -148,20 +186,48 @@ format_percent_with_p <- function(percent, p_value) {
   result
 }
 
-make_data_collection_table <- function(
-  data_collection = calculate_proportion_stats(),
-  chi_square_results = run_data_collection_chi_square(data_collection)
-) {
-  display_labels <- c(
-    anal_cancer_dysplasia_total = "Anal cancer/dysplasia",
-    perianal_disease_anal_cancer_dysplasia_5y =
-      "Perianal disease -> cancer/dysplasia within 5 years",
-    anal_hrhpv_total = "Anal-area HR-HPV",
-    anal_hrhpv_anal_cancer_dysplasia_5y =
-      "Anal-area HR-HPV -> cancer/dysplasia within 5 years"
+format_count_with_percent <- function(numerator, percent) {
+  result <- paste0(
+    formatC(
+      numerator,
+      format = "d",
+      big.mark = ","
+    ),
+    " (",
+    formatC(percent, format = "f", digits = 4),
+    "%)"
   )
 
-  group_headers <- data_collection |>
+  result
+}
+
+get_data_collection_display_labels <- function() {
+  result <- c(
+    anal_cancer_dysplasia_total = "Anal Cancer or Dysplasia (total)",
+    perianal_disease_anal_cancer_dysplasia_5y =
+      "Anal Cancer or Dysplasia 5 years after Perianal Disease diagnosis",
+    anal_hrhpv_anal_cancer_dysplasia_5y =
+      "Anal cancer or dysplasia 5 years after HR-HPV diagnosis",
+    anal_hrhpv_total =
+      "Positive High-Risk HPV diagnosis in anal area (total)"
+  )
+
+  result
+}
+
+get_data_collection_outcome_order <- function() {
+  result <- c(
+    "anal_cancer_dysplasia_total",
+    "perianal_disease_anal_cancer_dysplasia_5y",
+    "anal_hrhpv_anal_cancer_dysplasia_5y",
+    "anal_hrhpv_total"
+  )
+
+  result
+}
+
+make_group_headers <- function(data_collection) {
+  result <- data_collection |>
     dplyr::distinct(
       .data$group,
       .data$denominator
@@ -179,7 +245,25 @@ make_data_collection_table <- function(
       )
     )
 
+  result
+}
+
+prepare_data_collection_display_data <- function(
+  data_collection = calculate_proportion_stats(),
+  chi_square_results = run_data_collection_chi_square(data_collection)
+) {
+  display_labels <- get_data_collection_display_labels()
+  outcome_order <- get_data_collection_outcome_order()
+  group_headers <- make_group_headers(data_collection)
+
   display_data <- data_collection |>
+    dplyr::mutate(
+      outcome_id = factor(
+        .data$outcome_id,
+        levels = outcome_order
+      )
+    ) |>
+    dplyr::arrange(.data$outcome_id) |>
     dplyr::left_join(
       chi_square_results |>
         dplyr::select(
@@ -194,11 +278,37 @@ make_data_collection_table <- function(
     ) |>
     dplyr::mutate(
       outcome_label = dplyr::recode(
-        .data$outcome_id,
+        as.character(.data$outcome_id),
         !!!display_labels
       ),
-      value = format_percent_with_p(.data$percent_4dp, .data$p_value)
+      value = format_count_with_percent(
+        .data$numerator,
+        .data$percent_4dp
+      )
     ) |>
+    dplyr::select(
+      "outcome_id",
+      "outcome_label",
+      "group",
+      "denominator",
+      "group_header",
+      "value"
+    )
+
+  result <- display_data
+  result
+}
+
+make_data_collection_table <- function(
+  data_collection = calculate_proportion_stats(),
+  chi_square_results = run_data_collection_chi_square(data_collection)
+) {
+  display_data <- prepare_data_collection_display_data(
+    data_collection,
+    chi_square_results
+  )
+
+  result <- display_data |>
     dplyr::select(
       Measure = outcome_label,
       group_header,
@@ -209,7 +319,29 @@ make_data_collection_table <- function(
       values_from = value
     )
 
-  result <- display_data
+  result
+}
+
+make_patient_type_data_collection_table <- function(
+  data_collection = calculate_proportion_stats(),
+  chi_square_results = run_data_collection_chi_square(data_collection)
+) {
+  display_data <- prepare_data_collection_display_data(
+    data_collection,
+    chi_square_results
+  )
+
+  result <- display_data |>
+    dplyr::select(
+      `Patient Type` = group_header,
+      outcome_label,
+      value
+    ) |>
+    tidyr::pivot_wider(
+      names_from = outcome_label,
+      values_from = value
+    )
+
   result
 }
 
@@ -221,12 +353,17 @@ run_data_analysis <- function() {
     stats,
     chi_square_results
   )
+  patient_type_display_table <- make_patient_type_data_collection_table(
+    stats,
+    chi_square_results
+  )
 
   result <- list(
     data_collection = data_collection,
     stats = stats,
     chi_square_results = chi_square_results,
-    display_table = display_table
+    display_table = display_table,
+    patient_type_display_table = patient_type_display_table
   )
 
   result
@@ -241,4 +378,5 @@ if (is_direct_script_run) {
 
   print(analysis_result$chi_square_results)
   print(analysis_result$display_table)
+  print(analysis_result$patient_type_display_table)
 }

@@ -17,10 +17,22 @@ analysis <- run_data_analysis()
 
 The p value shown in each cell is the row-level Pearson chi-square p value comparing non-IBD, Crohn's disease, and ulcerative colitis for that outcome.
 
+## Measures as Rows
+
 ```{r}
 #| label: outcome-table
 knitr::kable(
   analysis$display_table,
   align = c("l", "c", "c", "c")
+)
+```
+
+## Patient Type as Rows
+
+```{r}
+#| label: patient-type-table
+knitr::kable(
+  analysis$patient_type_display_table,
+  align = c("l", "c", "c", "c", "c")
 )
 ```
