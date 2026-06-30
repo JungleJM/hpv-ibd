@@ -9,6 +9,8 @@ format:
     css: styles/tables.css
     embed-resources: true
     self-contained-math: true
+  docx:
+    toc: false
 bibliography: references.bib
 ---
 
