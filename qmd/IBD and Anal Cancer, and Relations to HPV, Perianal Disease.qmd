@@ -8,6 +8,16 @@ format:
     css: styles/tables.css
     embed-resources: true
     self-contained-math: true
+  pdf:
+    toc: false
+    toc-depth: 3
+    echo: false
+    css: styles/tables.css
+    embed-resources: true
+    self-contained-math: true
+  docx:
+    toc: false
+    toc-depth: 3
 execute:
   echo: false
 bibliography: "../data/biblio/IBD Anal Cancer.bib"

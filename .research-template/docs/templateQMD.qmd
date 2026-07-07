@@ -1,12 +1,24 @@
 ---
-title: "templateQMD"
+title: "TemplateQMD"
 format:
   html:
-    toc: true
+    toc: false
     toc-depth: 3
     toc-location: right
+    css: styles/tables.css
+    embed-resources: true
+    self-contained-math: true
+  pdf:
+    toc: false
+    toc-depth: 3
     echo: false
     css: styles/tables.css
     embed-resources: true
     self-contained-math: true
+  docx:
+    toc: false
+    toc-depth: 3
+execute:
+  echo: false
+bibliography: "(yourbiblio).bib"
 ---
