@@ -29,6 +29,12 @@ Prior studies have established an increased rate of anal cancer in patients with
 
 When looking at IBD patients in general within the Epic Cosmos dataset, we also found higher incidences of anal cancer in the IBD population. When separating by Crohn's vs Ulcerative Colitis, there is a 5x increased prevalence in Crohn's patients, and a 6.4x increased prevalence in Ulcerative Colitis patients.
 
+# Study Methods and Results
+
+*Methods:* We performed a retrospective Epic Cosmos analysis of 305,065,760 patients with active diagnoses from 6/1990 to 6/2026, stratified as Crohn's disease, ulcerative colitis, or non-IBD. Anal HR-HPV positivity, anal cancer/dysplasia, and perianal disease were defined by ICD-10 codes. Chi-square testing used p < 0.05. Although approximately 2.4 million IBD patients were identified, HPV testing denominators, negative results, screening frequency, and vaccination status were unavailable; findings may reflect screening, surveillance, or coding differences.
+
+*Results:* Compared with non-IBD patients, anal cancer/dysplasia was 5.0-fold higher in Crohn's disease and 6.4-fold higher in ulcerative colitis. Anal HR-HPV positivity was 2.2-fold and 3.6-fold higher, respectively. Anal cancer/dysplasia within 5 years after anal HR-HPV diagnosis was 2.6-fold higher in Crohn's disease and 4.1-fold higher in ulcerative colitis. The largest relative increase followed perianal disease diagnosis: 14.3-fold higher in Crohn's disease and 12.3-fold higher in ulcerative colitis. Unadjusted odds ratios versus non-IBD were similar, with the largest associations after perianal disease diagnosis: OR 14.26 for Crohn's disease and OR 12.26 for ulcerative colitis.
+
 | Patient Type | Anal Cancer or Dysplasia (total) | Anal Cancer or Dysplasia 5 years after Perianal Disease diagnosis | Positive High-Risk HPV diagnosis in anal area (total) | Anal cancer or dysplasia 5 years after High-Risk HPV diagnosis |
 |----|----|----|----|----|
 | Non-IBD (n=305,065,760) | 128,173 (0.0420%)\* | 10,195 (0.0033%)\* | 22,867 (0.0075%)\* | 9,404 (0.0031%)\* |
